@@ -2,16 +2,10 @@ version: "3.9"
 
 services:
   influxdb:
-    build: .
+    image: influxdb:2.7
     container_name: influxdb_server
     ports:
-      - "8086:8086"  # Puerto de InfluxDB
+      - "8087:8086"  # Puerto de InfluxDB
     volumes:
-      - influxdb_data:/var/lib/influxdb2  # Persistencia de datos
-    environment:
-      INFLUXDB_ADMIN_USER: admin
-      INFLUXDB_ADMIN_PASSWORD: admin123
-      INFLUXDB_DB: mydb
+      - /var/lib/influxdb:/var/lib/influxdb2  # Persistencia de datos
 
-volumes:
-  influxdb_data:
