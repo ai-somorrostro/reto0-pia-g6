@@ -5,7 +5,6 @@ services:
     image: influxdb:2.7
     container_name: influxdb_server
     ports:
-      - "8087:8086"  # Puerto de InfluxDB
+      - "8086:8086"
     volumes:
-      - /var/lib/influxdb:/var/lib/influxdb2  # Persistencia de datos
-
+      - /var/lib/influxdb:/var/lib/influxdb2
