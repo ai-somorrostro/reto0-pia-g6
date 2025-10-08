@@ -8,3 +8,29 @@ services:
       - "8086:8086"
     volumes:
       - /var/lib/influxdb:/var/lib/influxdb2
+
+  grafana:
+    image: grafana/grafana:10.3.0
+    container_name: grafana_server
+    depends_on:
+      - influxdb
+    ports:
+      - "3000:3000"
+    volumes:
+      - /var/lib/grafana:/var/lib/grafana2
+
+  nodered:
+    image: nodered/node-red:3.1.1
+    container_name: node_red
+    depends_on:
+      - influxdb
+    ports:
+      - "1880:1880"
+    volumes:
+      - /data:/data2
+
+volumes:
+  influxdb_data:
+  influxdb_config:
+  grafana_data:
+  nodered_data:
