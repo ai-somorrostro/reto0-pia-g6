@@ -27,10 +27,4 @@ services:
     ports:
       - "1880:1880"
     volumes:
-      - /data:/data2
-
-volumes:
-  influxdb_data:
-  influxdb_config:
-  grafana_data:
-  nodered_data:
+      - ./.node-red:/data
