@@ -2,7 +2,9 @@ version: "3.8"
 
 services:
   influxdb:
-    image: influxdb:2.7
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: influxdb
     ports:
       - "8086:8086"
@@ -38,7 +40,9 @@ services:
       - grafana_data:/data
   
   nodered:
-    image: nodered/node-red:3.1.1
+    build:
+      context: .
+      dockerfile: node_red/Dockerfile
     container_name: node_red
     depends_on:
       - influxdb
