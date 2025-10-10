@@ -4,6 +4,6 @@ USER node-red
 
 RUN npm install node-red-contrib-influxdb
 
-COPY /node_red/flows.json /data/flows.json
+COPY flows.json /data/flows.json
 
 USER root
