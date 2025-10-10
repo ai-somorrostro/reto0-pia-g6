@@ -11,12 +11,14 @@ services:
     volumes:
       - influxdb_data:/var/lib/influxdb2
     environment:
-    - DOCKER_INFLUXDB_INIT_MODE=setup
-    - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUX_USERNAME}
-    - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUX_PASSWORD}
-    - DOCKER_INFLUXDB_INIT_ORG=${INFLUX_ORG}
-    - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUX_BUCKET}
-    - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${INFLUX_TOKEN}
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=${INFLUX_USERNAME}
+      - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUX_PASSWORD}
+      - DOCKER_INFLUXDB_INIT_ORG=${INFLUX_ORG}
+      - DOCKER_INFLUXDB_INIT_BUCKET=${INFLUX_BUCKET}
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${INFLUX_TOKEN}
+    networks:
+      - iot-net
   
   python-app:
     build: .
@@ -28,6 +30,8 @@ services:
       INFLUX_TOKEN: ${INFLUX_TOKEN}
       INFLUX_ORG: ${INFLUX_ORG}
       INFLUX_BUCKET: ${INFLUX_BUCKET} 
+    networks:
+      - iot-net
 
   grafana:
     image: grafana/grafana:10.3.0
@@ -38,6 +42,8 @@ services:
       - "3000:3000"
     volumes:
       - grafana_data:/data
+    networks:
+      - iot-net
   
   nodered:
     build:
@@ -50,8 +56,14 @@ services:
       - "1880:1880"
     volumes:
       - nodered_data:/data
+    networks:
+      - iot-net
 
 volumes:
   influxdb_data:
   grafana_data:
   nodered_data:
+
+networks:
+  iot-net:
+    driver: bridge
