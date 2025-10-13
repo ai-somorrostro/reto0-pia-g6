@@ -1,0 +1,919 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 11,
+  "links": [],
+  "panels": [
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "ceyg1ufcggi68f"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDALU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Aluminio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDRH"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Rhodio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXCU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Cobre"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXLI"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Litio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Platino"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Platino"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Platino"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "ceyg1ufcggi68f"
+          },
+          "query": "from(bucket: \"metales-bucket\")\n\t|> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Precio\")\n  |> filter(fn: (r) => r[\"_field\"] == \"precio_ask\" or r[\"_field\"] == \"precio_spot\" or r[\"_field\"] == \"precio_bid\")\n  |> filter(fn: (r) => r[\"simbolo\"] == \"USDALU\" or r[\"simbolo\"] == \"USDRH\" or r[\"simbolo\"] == \"USDXPD\" or r[\"simbolo\"] == \"USDXAG\" or r[\"simbolo\"] == \"USDXAU\" or r[\"simbolo\"] == \"USDXLI\" or r[\"simbolo\"] == \"USDXCU\" or r[\"simbolo\"] == \"USDXPT\")",
+          "refId": "A"
+        }
+      ],
+      "title": "Precios actuales",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "ceyg1ufcggi68f"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "barWidthFactor": 0.6,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "right",
+          "showLegend": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "ceyg1ufcggi68f"
+          },
+          "query": "from(bucket: \"metales-bucket\")\n\t|> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Precio\")\n  |> filter(fn: (r) => r[\"_field\"] == \"precio_ask\" or r[\"_field\"] == \"precio_spot\" or r[\"_field\"] == \"precio_bid\")\n  |> filter(fn: (r) => r[\"simbolo\"] == \"USDALU\" or r[\"simbolo\"] == \"USDRH\" or r[\"simbolo\"] == \"USDXPD\" or r[\"simbolo\"] == \"USDXAG\" or r[\"simbolo\"] == \"USDXAU\" or r[\"simbolo\"] == \"USDXLI\" or r[\"simbolo\"] == \"USDXCU\" or r[\"simbolo\"] == \"USDXPT\")",
+          "refId": "A"
+        }
+      ],
+      "title": "Fluctuación precios",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "ceyg1ufcggi68f"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "unit": "short"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDALU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Aluminio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDRH"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Rhodio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXCU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Cobre"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXLI"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Litio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Platino"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Platino"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Platino"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 1,
+      "options": {
+        "displayLabels": [
+          "percent"
+        ],
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "right",
+          "showLegend": false,
+          "values": []
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "hideZeros": false,
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "ceyg1ufcggi68f"
+          },
+          "query": "from(bucket: \"metales-bucket\")\n\t|> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Precio\")\n  |> filter(fn: (r) => r[\"_field\"] == \"precio_ask\" or r[\"_field\"] == \"precio_spot\" or r[\"_field\"] == \"precio_bid\")\n  |> filter(fn: (r) => r[\"simbolo\"] == \"USDALU\" or r[\"simbolo\"] == \"USDRH\" or r[\"simbolo\"] == \"USDXPD\" or r[\"simbolo\"] == \"USDXAG\" or r[\"simbolo\"] == \"USDXAU\" or r[\"simbolo\"] == \"USDXLI\" or r[\"simbolo\"] == \"USDXCU\" or r[\"simbolo\"] == \"USDXPT\")",
+          "refId": "A"
+        }
+      ],
+      "title": "Porcentajes precio total",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "ceyg1ufcggi68f"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-GrYlRd"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": 0
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDALU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Aluminio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDRH"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Rhodio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXAG"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Plata"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXAU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Oro"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXCU"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Cobre"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXLI"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Litio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXPD"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Paladio"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_ask USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio compra Platino"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_bid USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio venta Platino"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "precio_spot USDXPT"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Precio Platino"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 4,
+      "options": {
+        "displayMode": "basic",
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "maxVizHeight": 300,
+        "minVizHeight": 16,
+        "minVizWidth": 8,
+        "namePlacement": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "sizing": "auto",
+        "valueMode": "color"
+      },
+      "pluginVersion": "12.1.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "ceyg1ufcggi68f"
+          },
+          "query": "from(bucket: \"metales-bucket\")\n\t|> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Precio\")\n  |> filter(fn: (r) => r[\"_field\"] == \"precio_ask\" or r[\"_field\"] == \"precio_spot\" or r[\"_field\"] == \"precio_bid\")\n  |> filter(fn: (r) => r[\"simbolo\"] == \"USDALU\" or r[\"simbolo\"] == \"USDRH\" or r[\"simbolo\"] == \"USDXPD\" or r[\"simbolo\"] == \"USDXAG\" or r[\"simbolo\"] == \"USDXAU\" or r[\"simbolo\"] == \"USDXLI\" or r[\"simbolo\"] == \"USDXCU\" or r[\"simbolo\"] == \"USDXPT\")",
+          "refId": "A"
+        }
+      ],
+      "title": "Diferencia precios",
+      "type": "bargauge"
+    }
+  ],
+  "preload": false,
+  "refresh": "5m",
+  "schemaVersion": 41,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "Precios metales",
+  "uid": "e88cb713-48f1-4d2d-8def-186b34ab78df",
+  "version": 17
+}
