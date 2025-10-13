@@ -31,7 +31,7 @@ docker compose version
 ### Clonar el repo
 
 ```bash
-git clone https://github.com/usuario/nombre-del-repositorio.git
+git clone git@github.com:ai-somorrostro/reto0-pia-g6.git
 ```
 
 ### Entrar al directorio
