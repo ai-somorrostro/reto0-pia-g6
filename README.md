@@ -130,7 +130,7 @@ Clona el repositorio a tu máquina local.
     ```bash
     python3 -m venv venv
     ```
-        ```bash
+    ```bash
     source venv/bin/activate
     ```
 
