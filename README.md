@@ -5,6 +5,7 @@ Este repositorio contiene el código fuente y toda la documentación del sitio w
 El objetivo principal de este proyecto es la creación de un sitio web profesional y moderno que sirva como la principal carta de presentación digital de **METALIA**. 
 
 La web está diseñada para proyectar una imagen de:
+
 *Seriedad y Experiencia*: A través de un diseño sobrio y contenido de valor.
 *Modernidad*: Utilizando tecnologías actuales y animaciones fluidas.
 *Confianza y Transparencia*: Ofreciendo información clara sobre el equipo, los servicios y el marco legal de la empresa.
