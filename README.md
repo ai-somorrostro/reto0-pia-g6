@@ -40,13 +40,21 @@ El proyecto está organizado de la siguiente manera para facilitar su mantenimie
 METALIA/
 
 ├── 📂 overrides/       # Plantillas HTML personalizadas (hero, footer, etc.)
+
 ├── 📂 docs/            # Todo el contenido visible de la web
+
 │   ├── 🖼️ assets/      # Imágenes, logos y favicon
+
 │   ├── 🎨 stylesheets/ # Hoja de estilos CSS personalizada (extra.css)
+
 │   ├── 📈 analisis/    # Página de Análisis de Mercado
+
 │   ├── ⚖️ legal/       # Páginas de Aviso Legal y Privacidad
+
 │   └── ... (archivos .md de cada página principal)
+
 ├── 📦 venv/            # Entorno virtual de Python (ignorado por Git)
+
 └── ⚙️ mkdocs.yml       # El cerebro del sitio: archivo principal de configuración
 
 
