@@ -1,7 +1,11 @@
-🪙 **METALIA** - Página Web Corporativa
+
+
+## 🪙 **METALIA** - Página Web Corporativa
 Este repositorio contiene el código fuente y toda la documentación del sitio web corporativo de METALIA, una *consultora de inversión de élite especializada en el sector de los metales preciosos*.
 
-🎯 Propósito y Finalidad del Proyecto
+---
+
+## 🎯 Propósito y Finalidad del Proyecto
 El objetivo principal de este proyecto es la creación de un sitio web profesional y moderno que sirva como la principal carta de presentación digital de **METALIA**. 
 
 La web está diseñada para proyectar una imagen de:
@@ -12,7 +16,9 @@ La web está diseñada para proyectar una imagen de:
 
 *Confianza y Transparencia*: Ofreciendo información clara sobre el equipo, los servicios y el marco legal de la empresa.
 
-✨ La Idea y el Concepto Creativo
+---
+
+## ✨ La Idea y el Concepto Creativo
 La visión fue crear una experiencia de usuario inmersiva que reflejara la naturaleza del negocio de METALIA: el **lujo**, la **precisión** y el valor intrínseco de los *metales preciosos*.
 
 Para lograrlo, el diseño se basa en los siguientes pilares:
@@ -28,13 +34,17 @@ Para lograrlo, el diseño se basa en los siguientes pilares:
 ⚙️ Organización y Funcionamiento Técnico
 La web ha sido construida utilizando un Generador de Sitios Estáticos, lo que garantiza máxima velocidad, seguridad y una gestión sencilla del contenido.
 
-**Herramientas Utilizadas**
+---
+
+## **Herramientas Utilizadas**
 
 🚀 *MkDocs*: El motor principal para generar la web, elegido por su simplicidad y potencia.
 🎨 *El tema Material for MkDocs*: Uno de los temas más profesionales para MkDocs, que proporciona el diseño adaptable, las animaciones y las funcionalidades avanzadas.
 🐍 *Python y venv*: Para gestionar las dependencias del proyecto de forma limpia y aislada.
 
-**Estructura de Carpetas**
+---
+
+## **Estructura de Carpetas**
 El proyecto está organizado de la siguiente manera para facilitar su mantenimiento:
 
 METALIA/
@@ -57,8 +67,7 @@ METALIA/
 
 └── ⚙️ mkdocs.yml       # El cerebro del sitio: archivo principal de configuración
 
-📋 Prerrequisitos
-Antes de poder ejecutar el proyecto en tu máquina local, asegúrate de tener instaladas las siguientes herramientas esenciales...
+---
 
 ## 📋 **Prerrequisitos**
 
@@ -125,5 +134,9 @@ Inicia el servidor de desarrollo:
 
 Abre tu navegador y ve a *http://127.0.0.1:8000* para ver la web en tiempo real.
 
+---
+
 🌐 Despliegue en GitHub Pages
 La publicación de la web está automatizada. Con buscar el link:  ** github.com/ai-somorrostro/reto0-pia-g6/settings/pages ** Podras acceder a la pagina web ya subida en **GitHub Pages** de manera profesional.
+
+---
