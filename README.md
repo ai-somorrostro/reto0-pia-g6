@@ -38,6 +38,7 @@ La web ha sido construida utilizando un Generador de Sitios Estáticos, lo que g
 El proyecto está organizado de la siguiente manera para facilitar su mantenimiento:
 
 METALIA/
+
 ├── 📂 overrides/       # Plantillas HTML personalizadas (hero, footer, etc.)
 ├── 📂 docs/            # Todo el contenido visible de la web
 │   ├── 🖼️ assets/      # Imágenes, logos y favicon
