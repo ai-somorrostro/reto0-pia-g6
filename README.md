@@ -57,6 +57,47 @@ METALIA/
 
 └── ⚙️ mkdocs.yml       # El cerebro del sitio: archivo principal de configuración
 
+📋 Prerrequisitos
+Antes de poder ejecutar el proyecto en tu máquina local, asegúrate de tener instaladas las siguientes herramientas esenciales...
+
+## 📋 **Prerrequisitos**
+
+Antes de poder ejecutar el proyecto en tu máquina local, asegúrate de tener instaladas las siguientes herramientas esenciales en tu sistema.
+
+### 1. Git
+
+Es el sistema de control de versiones que utilizamos para gestionar el código y para desplegar el sitio en GitHub Pages.
+
+*   **Cómo verificar si está instalado:**
+    ```bash
+    git --version
+    ```
+*   **Cómo instalarlo:**
+    Puedes descargarlo desde su página oficial: **[git-scm.com](https://git-scm.com/downloads)**
+
+### 2. Python 3
+
+Es el lenguaje de programación sobre el que funciona MkDocs y todas sus dependencias. Se necesita una versión reciente.
+
+*   **Requisito:** Python **3.8 o superior**.
+*   **Cómo verificar si está instalado:**
+    ```bash
+    python3 --version
+    ```
+*   **Cómo instalarlo:**
+    Puedes descargarlo desde su página oficial: **[python.org](https://www.python.org/downloads/)**
+
+### 3. Módulo `venv` de Python
+
+Es la herramienta estándar de Python para crear entornos virtuales aislados. Esto nos permite instalar las dependencias del proyecto de forma segura, sin afectar al sistema operativo.
+
+*   **En la mayoría de los casos (Windows, macOS):** Este módulo ya viene incluido con la instalación de Python 3.
+*   **En algunos sistemas Linux (como Debian/Ubuntu):** Puede que necesites instalarlo por separado.
+    ```bash
+    sudo apt update && sudo apt install python3-venv
+    ```
+
+---
 
 💻 Cómo Ejecutar el Proyecto en **Local**
 Para ver o modificar la web en un entorno de desarrollo, sigue estos pasos:
