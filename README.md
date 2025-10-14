@@ -7,7 +7,9 @@ El objetivo principal de este proyecto es la creación de un sitio web profesion
 La web está diseñada para proyectar una imagen de:
 
 *Seriedad y Experiencia*: A través de un diseño sobrio y contenido de valor.
+
 *Modernidad*: Utilizando tecnologías actuales y animaciones fluidas.
+
 *Confianza y Transparencia*: Ofreciendo información clara sobre el equipo, los servicios y el marco legal de la empresa.
 
 ✨ La Idea y el Concepto Creativo
