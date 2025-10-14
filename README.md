@@ -114,25 +114,35 @@ Es la herramienta estándar de Python para crear entornos virtuales aislados. Es
 Para ver o modificar la web en un entorno de desarrollo, sigue estos pasos:
 Clona el repositorio a tu máquina local.
 
-**git clone** (repositorio SHH)
+### 1. CLONAR REPOSITORIO
 
-Navega a la carpeta del proyecto:
+*   **Cómo clonar el repositorio:**
+    ```bash
+    git clone "codigo ssh"
+    ```
 
-**cd reto0-pia-g6/METALIA/**
+*   **Navega a la carpeta del proyecto:**
+    ```bash
+    cd reto0-pia-g6/METALIA/
+    ```
 
-Crea y activa el entorno virtual de Python:
+*   **Crea y activa el entorno virtual de Python:**
+    ```bash
+    python3 -m venv venv
+    ```
+        ```bash
+    source venv/bin/activate
+    ```
 
-**python3 -m venv venv**
+*   **Instala las dependencias necesarias:**
+    ```bash
+    pip install mkdocs mkdocs-material
+    ```
 
-**source venv/bin/activate**
-
-Instala las dependencias necesarias:
-
-**pip install mkdocs mkdocs-material**
-
-Inicia el servidor de desarrollo:
-
-**mkdocs serve**
+*   **Inicia el servidor de desarrollo:**
+    ```bash
+    mkdocs serve
+    ```
 
 Abre tu navegador y ve a *http://127.0.0.1:8000* para ver la web en tiempo real.
 
