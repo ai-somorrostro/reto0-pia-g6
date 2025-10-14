@@ -1,35 +1,23 @@
 [
     {
-        "id": "1a66a27e5aa2d31e",
-        "type": "tab",
-        "label": "Flujo 3",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "c5d0f10991856812",
         "type": "inject",
         "z": "1a66a27e5aa2d31e",
-        "name": "",
+        "name": "Cada 10 minutos (y al iniciar)",
         "props": [
             {
                 "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
             }
         ],
         "repeat": "600",
         "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
+        "once": true,
+        "onceDelay": "10",
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 200,
-        "y": 140,
+        "x": 210,
+        "y": 180,
         "wires": [
             [
                 "7c2811f754bd3c81"
@@ -40,7 +28,7 @@
         "id": "7c2811f754bd3c81",
         "type": "http request",
         "z": "1a66a27e5aa2d31e",
-        "name": "",
+        "name": "API Metales",
         "method": "GET",
         "ret": "obj",
         "paytoqs": "ignore",
@@ -52,8 +40,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 390,
-        "y": 140,
+        "x": 450,
+        "y": 180,
         "wires": [
             [
                 "f321db3065c20a72"
@@ -61,39 +49,23 @@
         ]
     },
     {
-        "id": "a76e3e3eb471a1df",
-        "type": "debug",
-        "z": "1a66a27e5aa2d31e",
-        "name": "debug 11",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 740,
-        "y": 140,
-        "wires": []
-    },
-    {
         "id": "f321db3065c20a72",
         "type": "function",
         "z": "1a66a27e5aa2d31e",
-        "name": "function 11",
-        "func": "// 1. Definir los metales. Cada uno tiene el 'tagName' que queremos usar en InfluxDB\n// y las claves ('spotKey', 'bidKey', 'askKey') que usa la API.\nconst metales = [\n    { tagName: \"USDXAU\", spotKey: \"USDXAU\", bidKey: \"USDXAU-BID\", askKey: \"USDXAU-ASK\" },\n    { tagName: \"USDXAG\", spotKey: \"USDXAG\", bidKey: \"USDXAG-BID\", askKey: \"USDXAG-ASK\" },\n    { tagName: \"USDXPD\", spotKey: \"USDXPD\", bidKey: \"USDXPD-BID\", askKey: \"USDXPD-ASK\" },\n    { tagName: \"USDXPT\", spotKey: \"USDXPT\", bidKey: \"USDXPT-BID\", askKey: \"USDXPT-ASK\" },\n    { tagName: \"USDRH\", spotKey: \"USDXRH\" },\n    { tagName: \"USDALU\", spotKey: \"USDALU\" },\n    { tagName: \"USDXCU\", spotKey: \"USDXCU\" },\n    { tagName: \"USDXLI\", spotKey: \"USDXLI\" }\n];\n\n// 2. Extraer el objeto 'rates' de la respuesta de la API.\nconst rates = msg.payload.rates;\nif (!rates) {\n    node.error(\"No se encontró el objeto 'rates' en la respuesta de la API.\");\n    return null;\n}\n\n// 3. Recorrer nuestro array de metales.\nmetales.forEach(metal => {\n    let fields = {};\n\n    // Verificamos si tenemos el precio spot\n    if (rates[metal.spotKey]) {\n        fields.precio_spot = Number(rates[metal.spotKey]);\n    } else {\n        node.warn(\"No se encontró precio para el símbolo: \" + metal.tagName);\n        return; // Salta a la siguiente iteración\n    }\n\n    // Verificamos si este metal tiene precios Bid y Ask\n    if (metal.bidKey && metal.askKey && rates[metal.bidKey] && rates[metal.askKey]) {\n        const askPrice = Number(rates[metal.askKey]);\n        const bidPrice = Number(rates[metal.bidKey]);\n\n        fields.precio_ask = askPrice;\n        fields.precio_bid = bidPrice;\n        // Calculamos el spread (la diferencia entre compra y venta)\n        fields.spread = askPrice - bidPrice;\n    }\n// 4. Crear y enviar el mensaje para InfluxDB, usando el 'tagName' personalizado\n    let newMsg = {\n        payload: [\n            fields,\n            { simbolo: metal.tagName } // ¡Aquí está el cambio! Usamos el tagName.\n        ]\n    };\n\n    node.send(newMsg);\n});\n\nreturn null;",
+        "name": "Procesar Datos",
+        "func": "// 1. Definir los metales.\nconst metales = [\n    { tagName: \"USDXAU\", spotKey: \"USDXAU\", bidKey: \"USDXAU-BID\", askKey: \"USDXAU-ASK\" },\n    { tagName: \"USDXAG\", spotKey: \"USDXAG\", bidKey: \"USDXAG-BID\", askKey: \"USDXAG-ASK\" },\n    { tagName: \"USDXPD\", spotKey: \"USDXPD\", bidKey: \"USDXPD-BID\", askKey: \"USDXPD-ASK\" },\n    { tagName: \"USDXPT\", spotKey: \"USDXPT\", bidKey: \"USDXPT-BID\", askKey: \"USDXPT-ASK\" },\n    { tagName: \"USDRH\", spotKey: \"USDXRH\" },\n    { tagName: \"USDALU\", spotKey: \"USDALU\" },\n    { tagName: \"USDXCU\", spotKey: \"USDXCU\" },\n    { tagName: \"USDXLI\", spotKey: \"USDXLI\" }\n];\n\n// 2. Extraer el objeto 'rates' de la respuesta de la API.\nconst rates = msg.payload.rates;\nif (!rates) {\n    node.error(\"No se encontró el objeto 'rates' en la respuesta de la API.\");\n    return null;\n}\n\n// 3. Recorrer nuestro array de metales.\nmetales.forEach(metal => {\n    let fields = {};\n\n    if (rates[metal.spotKey]) {\n        fields.precio_spot = Number(rates[metal.spotKey]);\n    } else {\n        node.warn(\"No se encontró precio para el símbolo: \" + metal.tagName);\n        return; // Salta a la siguiente iteración\n    }\n\n    if (metal.bidKey && metal.askKey && rates[metal.bidKey] && rates[metal.askKey]) {\n        const askPrice = Number(rates[metal.askKey]);\n        const bidPrice = Number(rates[metal.bidKey]);\n\n        fields.precio_ask = askPrice;\n        fields.precio_bid = bidPrice;\n        fields.spread = askPrice - bidPrice;\n    }\n\n    let newMsg = {\n        payload: [\n            fields,\n            { simbolo: metal.tagName }\n        ]\n    };\n\n    node.send(newMsg);\n});\n\nreturn null;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
-        "y": 140,
+        "x": 640,
+        "y": 180,
         "wires": [
             [
-                "a76e3e3eb471a1df",
-                "0d5e1060877b487f"
+                "0d5e1060877b487f",
+                "9f471b1f8a38f67c"
             ]
         ]
     },
@@ -101,41 +73,49 @@
         "id": "0d5e1060877b487f",
         "type": "influxdb out",
         "z": "1a66a27e5aa2d31e",
-        "influxdb": "0ae525a98cd7404b",
-        "name": "Influxdb - Reto0",
+        "influxdb": "1c5133f170702cb3",
+        "name": "Enviar a InfluxDB",
         "measurement": "Precio",
         "precision": "",
         "retentionPolicy": "",
-        "database": "database",
+        "database": "",
         "precisionV18FluxV20": "ms",
         "retentionPolicyV18Flux": "",
         "org": "somorrostro",
-        "bucket": "prueba_reto0-bucket",
-        "x": 760,
-        "y": 220,
+        "bucket": "metales-bucket",
+        "x": 910,
+        "y": 180,
         "wires": []
     },
     {
-        "id": "0ae525a98cd7404b",
+        "id": "9f471b1f8a38f67c",
+        "type": "debug",
+        "z": "1a66a27e5aa2d31e",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1c5133f170702cb3",
         "type": "influxdb",
         "hostname": "127.0.0.1",
-        "port": 8086,
+        "port": "8086",
         "protocol": "http",
         "database": "database",
-        "name": "localhost",
+        "name": "influxdb - Reto0",
         "usetls": false,
         "tls": "",
         "influxdbVersion": "2.0",
-        "url": "http://localhost:8086",
-        "timeout": 10,
+        "url": "http://influxdb:8086/",
+        "timeout": "10",
         "rejectUnauthorized": true
-    },
-    {
-        "id": "e0ff96a379ec3846",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "node-red-contrib-influxdb": "0.7.0"
-        }
     }
 ]
