@@ -39,7 +39,9 @@ La web ha sido construida utilizando un Generador de Sitios Estáticos, lo que g
 ## **Herramientas Utilizadas**
 
 🚀 *MkDocs*: El motor principal para generar la web, elegido por su simplicidad y potencia.
+
 🎨 *El tema Material for MkDocs*: Uno de los temas más profesionales para MkDocs, que proporciona el diseño adaptable, las animaciones y las funcionalidades avanzadas.
+
 🐍 *Python y venv*: Para gestionar las dependencias del proyecto de forma limpia y aislada.
 
 ---
