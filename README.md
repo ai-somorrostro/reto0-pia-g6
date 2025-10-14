@@ -149,6 +149,6 @@ Abre tu navegador y ve a *http://127.0.0.1:8000* para ver la web en tiempo real.
 ---
 
 🌐 Despliegue en GitHub Pages
-La publicación de la web está automatizada. Con buscar el link:  ** github.com/ai-somorrostro/reto0-pia-g6/settings/pages ** Podras acceder a la pagina web ya subida en **GitHub Pages** de manera profesional.
+La publicación de la web está automatizada. Con buscar el link: *https://ai-somorrostro.github.io/reto0-pia-g6/* . De esta manera podras acceder a la pagina web ya subida en **GitHub Pages** de manera profesional.
 
 ---
