@@ -144,3 +144,9 @@ cd <nombre del contenedor>
 ```bash
 docker-compose up -d
 ```
+
+## Bajar el contenedor
+
+```bash
+docker compose down -v
+```
