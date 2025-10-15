@@ -129,7 +129,7 @@ La publicación de la web está **automatizada**. El comando `mkdocs gh-deploy` 
 ## Clonar repo
 
 ```bash
-git clone 
+git clone git@github.com:ai-somorrostro/reto0-pia-g6.git
 ```
 
 ## Meterse en el repo y el contenedor
