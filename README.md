@@ -122,3 +122,25 @@ Para ver o modificar la web en un entorno de desarrollo, sigue estos pasos:
 ## 🌐 **Despliegue en GitHub Pages**
 
 La publicación de la web está **automatizada**. El comando `mkdocs gh-deploy` se encarga de construir el sitio estático y subirlo a la rama `gh-pages`, desde donde es servido por GitHub Pages.
+
+
+# Accionar los contenedores
+
+## Clonar repo
+
+```bash
+git clone 
+```
+
+## Meterse en el repo y el contenedor
+
+```bash
+cd reto0-pia-g6
+cd <nombre del contenedor>
+```
+
+## Runear el contenedor
+
+```bash
+docker-compose up -d
+```
