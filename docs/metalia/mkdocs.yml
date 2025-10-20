@@ -1,0 +1,59 @@
+# --- Configuración General del Sitio ---
+site_name: METALIA
+site_url: https://tu-usuario.github.io/reto0-pia-g6/
+site_author: El Equipo de METALIA
+site_description: >-
+  Consultoría de inversión especializada en metales preciosos.
+  Maximizamos el potencial de su cartera en oro, plata, platino y más.
+
+# --- Tema y Apariencia ---
+theme:
+  name: material
+  language: es
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  custom_dir: overrides
+  palette:
+    scheme: slate
+    primary: black
+    accent: amber
+  features:
+    - navigation.tabs
+    - navigation.top
+    - header.autohide
+    - navigation.sections
+    - navigation.expand
+    - toc.follow
+
+# --- Navegación del Sitio ---
+nav:
+  - 'Inicio': 'index.md'
+  - 'La Firma': 'quienes_somos.md'
+  - 'Nuestro Equipo': 'equipo.md'
+  - 'Servicios': 'servicios.md'
+  - 'Análisis de Mercado': 'analisis/index.md'
+  - 'Contacto': 'contacto.md'
+
+# --- HOJA DE ESTILOS PERSONALIZADA ---
+extra_css:
+  - stylesheets/extra.css
+
+# --- PIE DE PÁGINA: ICONOS SOCIALES Y COPYRIGHT ---
+extra:
+  copyright: Copyright &copy; 2025 METALIA - Todos los derechos reservados
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/company/metalia-placeholder
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/metalia-placeholder
+
+# --- Extensiones de Markdown ---
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
