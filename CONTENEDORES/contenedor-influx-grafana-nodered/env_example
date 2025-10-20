@@ -1,0 +1,12 @@
+# Usuario y contraseña para inicializar InfluxDB
+INFLUX_USERNAME='tu usuario'
+INFLUX_PASSWORD='tu contraseña'
+
+# Organización y bucket inicial
+INFLUX_ORG='tu organización'
+INFLUX_BUCKET='tu bucket'
+
+# Token de administración inicial
+INFLUX_TOKEN='tu token'
+
+INFLUX_URL='tu URL'
