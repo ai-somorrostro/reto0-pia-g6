@@ -126,6 +126,11 @@ La publicación de la web está **automatizada**. El comando `mkdocs gh-deploy` 
 
 # Accionar los contenedores
 
+## Requisitos Previos
+
+1.  Tener **Docker** y **Docker Compose** instalados.
+2.  Tener conexión a la red que da acceso a la API de datos en `http://10.221.70.238:8000`.
+
 ## Clonar repo
 
 ```bash
