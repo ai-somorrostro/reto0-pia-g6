@@ -137,6 +137,10 @@ La publicación de la web está **automatizada**. El comando `mkdocs gh-deploy` 
 git clone git@github.com:ai-somorrostro/reto0-pia-g6.git
 ```
 
+# Datos .env_example
+
+Dentro de nuestro archivo env_example recuerda añadir tus propias credenciales antes de iniciarlo para que funcione.
+
 ## Meterse en el repo y el contenedor
 
 ```bash
